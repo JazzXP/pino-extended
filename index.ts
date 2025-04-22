@@ -4,11 +4,26 @@ let globalLogger: pino.Logger | undefined;
 export const startLog = (
   event: string,
   defaultLogLevel: pino.Level = 'info',
+  pinoLogger?: pino.Logger,
 ) => {
-  if (!globalLogger) {
+  let localLogger = pinoLogger;
+  if (!globalLogger && !pinoLogger) {
     globalLogger = pino();
   }
-  return new Logger(event, defaultLogLevel);
+  if (!pinoLogger) {
+    localLogger = globalLogger;
+  }
+  return new Logger(event, defaultLogLevel, localLogger as pino.Logger);
+};
+
+export const singleLog = (
+  event: string,
+  data: Record<string, unknown>,
+  logLevel: pino.Level = 'info',
+  pinoLogger?: pino.Logger,
+) => {
+  using logger = startLog(event, logLevel, pinoLogger);
+  logger.log(data);
 };
 
 class Logger implements Disposable {
@@ -17,21 +32,10 @@ class Logger implements Disposable {
   #currentData: Record<PropertyKey, unknown> = {};
   #startTime: Date;
 
-  constructor(
-    event: string,
-    defaultLogLevel: pino.Level,
-    logger?: pino.Logger,
-  ) {
+  constructor(event: string, defaultLogLevel: pino.Level, logger: pino.Logger) {
     this.#currentLogLevel = defaultLogLevel;
     this.#startTime = new Date();
-    if (logger) {
-      this.logger = logger;
-    } else {
-      if (!globalLogger) {
-        globalLogger = pino();
-      }
-      this.logger = globalLogger;
-    }
+    this.logger = logger;
     this.log({ event });
   }
   [Symbol.dispose]() {
