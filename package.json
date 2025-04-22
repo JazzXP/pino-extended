@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/jazzxp/pino-extended.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "main": "index.js",
   "scripts": {
     "test": "vitest --coverage",
