@@ -24,6 +24,6 @@ jobs:
       - name: Build
         run: pnpm build
       - name: Publish package
-        run: pnpm publish --access public --no-git-checks
+        run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

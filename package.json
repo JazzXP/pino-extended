@@ -1,5 +1,5 @@
 {
-  "name": "pino-extended",
+  "name": "@jazzxp/pino-extended",
   "version": "1.0.0",
   "description": "Extended usage for Pino",
   "repository": {
@@ -7,7 +7,9 @@
     "url": "https://github.com/jazzxp/pino-extended.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/jazzxp"
+    "registry": "https://npm.pkg.github.com/",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
   },
   "main": "index.js",
   "scripts": {
