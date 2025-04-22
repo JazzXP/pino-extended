@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { startLog } from '.';
+import { singleLog, startLog } from '.';
 import pino, { Level } from 'pino';
 describe('Logger Tests', () => {
   it('should output when out of scope', () => {
@@ -44,6 +44,24 @@ describe('Logger Tests', () => {
       totalTime: 0,
       event: 'TestEvent',
       test: ['test', 'test2', 'test3'],
+    });
+  });
+  it('should be able to do a single log without going out of scope', () => {
+    // ARRANGE
+    const testTime = new Date();
+    vi.setSystemTime(testTime);
+    const pinoLogger = pino();
+    const spy = vi.spyOn(pinoLogger, 'info');
+
+    singleLog('TestEvent', { test: 'test' }, 'info', pinoLogger);
+
+    // ASSERT
+    expect(spy).toHaveBeenCalledExactlyOnceWith({
+      startTime: testTime,
+      endTime: testTime,
+      totalTime: 0,
+      event: 'TestEvent',
+      test: 'test',
     });
   });
   const levels: Level[] = ['trace', 'debug', 'info', 'warn', 'error', 'fatal'];
