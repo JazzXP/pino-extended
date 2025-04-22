@@ -1,7 +1,11 @@
 {
   "name": "pino-extended",
   "version": "1.0.0",
-  "description": "",
+  "description": "Extended usage for Pino",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jazzxp/pino-extended.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "vitest --coverage",
