@@ -115,5 +115,3 @@ class Logger implements Disposable {
     return this.log(data);
   }
 }
-
-export default Logger;
