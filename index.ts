@@ -1,6 +1,8 @@
 import pino from 'pino';
 
 let globalLogger: pino.Logger | undefined;
+
+/** Starts the logging process, Make sure you assign with `using` and not `const` or `let` */
 export const startLog = (
   event: string,
   defaultLogLevel: pino.Level = 'info',
@@ -16,6 +18,7 @@ export const startLog = (
   return new Logger(event, defaultLogLevel, localLogger as pino.Logger);
 };
 
+/** Outputs a single log entry */
 export const singleLog = (
   event: string,
   data: Record<string, unknown>,
