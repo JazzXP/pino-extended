@@ -1,0 +1,6 @@
+{
+  "name": "@jazzxp/pino-extended",
+  "version": "1.0.2",
+  "license": "MIT",
+  "exports": "./index.ts"
+}
