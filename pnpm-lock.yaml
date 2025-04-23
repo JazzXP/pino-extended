@@ -11,9 +11,6 @@ importers:
       pino:
         specifier: ^9.6.0
         version: 9.6.0
-      typescript:
-        specifier: ^5.8.3
-        version: 5.8.3
     devDependencies:
       '@eslint/js':
         specifier: ^9.24.0
@@ -27,6 +24,9 @@ importers:
       globals:
         specifier: ^16.0.0
         version: 16.0.0
+      typescript:
+        specifier: ^5.8.3
+        version: 5.8.3
       typescript-eslint:
         specifier: ^8.30.1
         version: 8.30.1(eslint@9.24.0)(typescript@5.8.3)
