@@ -7,7 +7,7 @@ export const startLog = (
   event: string,
   defaultLogLevel: pino.Level = 'info',
   pinoLogger?: pino.Logger,
-) => {
+): Logger => {
   let localLogger = pinoLogger;
   if (!globalLogger && !pinoLogger) {
     globalLogger = pino();
@@ -24,7 +24,7 @@ export const singleLog = (
   data: Record<string, unknown>,
   logLevel: pino.Level = 'info',
   pinoLogger?: pino.Logger,
-) => {
+): void => {
   using logger = startLog(event, logLevel, pinoLogger);
   logger.log(data);
 };
