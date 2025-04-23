@@ -1,5 +1,9 @@
 # Pino Extended
 
+[![JSR](https://jsr.io/badges/@jazzxp/pino-extended)](https://jsr.io/@jazzxp/pino-extended)
+[![NPM Version](https://img.shields.io/npm/v/%40jazzxp%2Fpino-extended)](https://www.npmjs.com/package/@jazzxp/pino-extended)
+[![GitHub Release](https://img.shields.io/github/v/release/jazzxp/pino-extended)](https://github.com/JazzXP/pino-extended)
+
 Extends Pino with a couple of useful abilities.
 
 Firstly we log on going out of scope (by leveraging Javascript's `using` keyword),
@@ -10,12 +14,24 @@ it into an array so you won't lose data.
 
 ## Installation
 
+### NPM
+
+```bash
+npm install @jazzxp/pino-extended
+```
+
+### Github
+
 ```bash
 npm login --scope=@jazzxp --auth-type=legacy --registry=https://npm.pkg.github.com
 npm install @jazzxp/pino-extended
 ```
 
-or just use your package manager of choice
+### JSR
+
+```bash
+npx jsr add @jazzxp/pino-extended
+```
 
 ## Basic Usage
 
