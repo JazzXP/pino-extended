@@ -3,7 +3,7 @@
     "target": "es2024" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
     // "libReplacement": true,                           /* Enable lib replacement. */
     "moduleDetection": "auto" /* Control what method is used to detect module-format JS files. */,
-    "lib": ["es2022", "ESNext.Disposable", "dom"],
+    "lib": ["es2022", "ESNext.Disposable"],
 
     /* Modules */
     "module": "ESNext" /* Specify what module code is generated. */,
