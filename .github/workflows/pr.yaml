@@ -24,6 +24,11 @@ jobs:
         run: pnpm publish --no-git-checks --access public --dry-run
       - name: JSR publish dry run
         run: pnpx jsr publish --dry-run
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '22.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@jazzxp'
       - name: Github publish dry run
         run: pnpm publish --no-git-checks
         env:
