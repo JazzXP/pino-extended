@@ -1,6 +1,9 @@
 {
   "name": "@jazzxp/pino-extended",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "MIT",
-  "exports": "./index.ts"
+  "exports": "./index.ts",
+  "imports": {
+    "pino": "npm:pino@^9.6.0"
+  }
 }

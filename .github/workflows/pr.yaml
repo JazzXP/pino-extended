@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      packages: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
@@ -20,3 +21,16 @@ jobs:
         run: pnpm build
       - name: Test
         run: pnpm test
+      - name: NPM publish dry run
+        run: pnpm publish --no-git-checks --access public --dry-run
+      - name: JSR publish dry run
+        run: pnpx jsr publish --dry-run
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '22.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@jazzxp'
+      - name: Github publish dry run
+        run: pnpm publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
