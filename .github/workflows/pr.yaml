@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
@@ -31,6 +30,6 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@jazzxp'
       - name: Github publish dry run
-        run: pnpm publish --no-git-checks
+        run: pnpm publish --no-git-checks --dry-run
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
