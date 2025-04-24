@@ -20,3 +20,11 @@ jobs:
         run: pnpm build
       - name: Test
         run: pnpm test
+      - name: NPM publish dry run
+        run: pnpm publish --no-git-checks --access public --dry-run
+      - name: JSR publish dry run
+        run: pnpx jsr publish --dry-run
+      - name: Github publish dry run
+        run: pnpm publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
