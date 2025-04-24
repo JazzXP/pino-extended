@@ -23,7 +23,7 @@
   ],
   "author": "Sam Dickinson",
   "license": "MIT",
-  "dependencies": {
+  "peerDependencies": {
     "pino": "^9.6.0"
   },
   "devDependencies": {
