@@ -4,7 +4,10 @@
 [![NPM Version](https://img.shields.io/npm/v/%40jazzxp%2Fpino-extended)](https://www.npmjs.com/package/@jazzxp/pino-extended)
 [![GitHub Release](https://img.shields.io/github/v/release/jazzxp/pino-extended)](https://github.com/JazzXP/pino-extended)
 
-Extends Pino with a couple of useful abilities.
+[![License](https://img.shields.io/github/license/jazzxp/pino-extended)](LICENSE)
+[![CodeQL](https://github.com/JazzXP/pino-extended/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/JazzXP/pino-extended/actions/workflows/github-code-scanning/codeql)
+
+Extends [Pino](https://getpino.io/#/) with a couple of useful abilities.
 
 Firstly we log on going out of scope (by leveraging Javascript's `using` keyword),
 rather than immediately. This allows us to easily compute and log run times.
